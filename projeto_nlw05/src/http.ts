@@ -13,8 +13,14 @@ app.set("views", path.join(__dirname, "..", "public"));
 app.engine("html", require("ejs").renderFile);
 app.set("view engine", "html");
 
+//rota para exibir pagina do cliente
 app.get("/pages/client", (request, response) => {
     return response.render("html/client.html")
+})
+
+//rota para exibir pagina do administrador
+app.get("/pages/admin", (request, response) => {
+    return response.render("html/admin.html")
 })
 
 const http = createServer(app); //criando protocolo http
